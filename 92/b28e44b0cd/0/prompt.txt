@@ -1,0 +1,5 @@
+ok i want to test bitloops with opencode in this project, like i did with claude and gemini cli
+
+---
+
+and look at this also https://github.com/bitloops/bitloops

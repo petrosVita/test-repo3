@@ -1,0 +1,38 @@
+{
+  "checkpoint_id": "92b28e44b0cd",
+  "session_id": "15718aaa-60a6-4885-a9a8-be4f93fb22de",
+  "checkpoints_count": 1,
+  "strategy": "manual-commit",
+  "agent": "claude-code",
+  "created_at": "2026-03-17T11:18:58.869400527Z",
+  "cli_version": "0.0.9",
+  "turn_id": "56a50c1ac1a2",
+  "files_touched": [
+    ".opencode/plugins/bitloops.ts"
+  ],
+  "branch": "main",
+  "token_usage": {
+    "input_tokens": 16,
+    "cache_creation_tokens": 20481,
+    "cache_read_tokens": 204927,
+    "output_tokens": 2679,
+    "api_call_count": 10,
+    "subagent_tokens": {
+      "input_tokens": 3008,
+      "cache_creation_tokens": 55388,
+      "cache_read_tokens": 563892,
+      "output_tokens": 10900,
+      "api_call_count": 30
+    }
+  },
+  "initial_attribution": {
+    "agent_lines": 254,
+    "agent_percentage": 93.38235294117648,
+    "calculated_at": "2026-03-17T11:18:58.270896154Z",
+    "human_added": 18,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 272
+  },
+  "transcript_path": "/home/petran/.claude/projects/-mnt-c-Users-OMEN-OneDrive-------------testets-test-repo3/15718aaa-60a6-4885-a9a8-be4f93fb22de.jsonl"
+}
