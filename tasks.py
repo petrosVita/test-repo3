@@ -87,10 +87,20 @@ def clear_tasks():
     print("All tasks cleared.")
 
 
+def count_tasks():
+    tasks = load_tasks()
+    total = len(tasks)
+    done = sum(1 for t in tasks if t["done"])
+    pending = total - done
+    print(f"Total:   {total}")
+    print(f"Done:    {done}")
+    print(f"Pending: {pending}")
+
+
 def main():
     args = sys.argv[1:]
     if not args or "--help" in args or "-h" in args:
-        print("Usage: tasks.py <add|list|done|remove|clear|search> [args]")
+        print("Usage: tasks.py <add|list|done|remove|clear|search|count> [args]")
         print("\nCommands:")
         print("  add <title> [--priority <p>] [--due <d>] [--tag <t>] [--notes <n>]")
         print("  list")
@@ -98,6 +108,7 @@ def main():
         print("  remove <id>")
         print("  clear")
         print("  search <keyword>")
+        print("  count")
         return
 
     cmd = args[0]
@@ -111,16 +122,16 @@ def main():
         while i < len(remaining):
             if remaining[i] == "--priority" and i + 1 < len(remaining):
                 priority = remaining[i + 1]
-                remaining = remaining[:i] + remaining[i + 2:]
+                remaining = remaining[:i] + remaining[i + 2 :]
             elif remaining[i] == "--due" and i + 1 < len(remaining):
                 due_date = remaining[i + 1]
-                remaining = remaining[:i] + remaining[i + 2:]
+                remaining = remaining[:i] + remaining[i + 2 :]
             elif remaining[i] == "--tag" and i + 1 < len(remaining):
                 tags.append(remaining[i + 1])
-                remaining = remaining[:i] + remaining[i + 2:]
+                remaining = remaining[:i] + remaining[i + 2 :]
             elif remaining[i] == "--notes" and i + 1 < len(remaining):
                 notes = remaining[i + 1]
-                remaining = remaining[:i] + remaining[i + 2:]
+                remaining = remaining[:i] + remaining[i + 2 :]
             else:
                 i += 1
         add_task(" ".join(remaining), priority, due_date, tags, notes)
@@ -134,6 +145,8 @@ def main():
         clear_tasks()
     elif cmd == "search" and len(args) > 1:
         search_tasks(" ".join(args[1:]))
+    elif cmd == "count":
+        count_tasks()
     else:
         print(f"Unknown command: {cmd}")
 
